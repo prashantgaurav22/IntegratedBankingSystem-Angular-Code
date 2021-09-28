@@ -1,0 +1,60 @@
+<body>
+    <div id="utility-bills">
+        <h3 class="text-center text-white pt-5">Integrated Banking System</h3>
+        <div class="container">
+            <div id="utility-bills-row" class="row justify-content-center align-items-center">
+                <div id="utility-bills-column" class="col-md-6">
+                    <div id="utility-bills-box" class="col-md-12">
+                        <form id="utility-bills-form" class="form" action="" method="post">
+                            <h3 class="text-center text-info">Pay Utility Bills</h3>
+                            <div class="form-group">
+
+                                <tr>
+                                    <th><label for="bills" class="text-info">Bills:</label></th>
+
+
+                              
+
+
+
+                                    <div class="form-group">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <select (change)="selectedType($event)" name="">
+                                            <option>select</option>
+                                            <option value="1" name="">Water</option>
+                                            <option value="2" name="">Electricity Bills</option>
+                                            <option value="3" name="">Trasnportaion</option>
+                                        </select><br>
+                                        <div *ngIf="selectedValue == '1'">
+                                            <br>
+                                            <input type="text" placeholder="Water Bill ID" name="">
+                                        </div><br>
+                                        <div *ngIf="selectedValue == '2'">
+                                            <input type="text" placeholder="Electricity Bill Id" name="">
+                                        </div>
+                                        <div *ngIf="selectedValue == '3'">
+                                            <input type="text" placeholder="Ticket Number" name="">
+                                        </div>
+                                    </div>
+                            </div>
+
+
+
+
+                            <div>
+                                <th><label for="bills" class="text-info">Amount: <input type="number"></label></th>
+                            </div>
+                            <br>
+
+                            <div class="form-group">
+<a href ="/paysuccess">pay</a>
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Proceed">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

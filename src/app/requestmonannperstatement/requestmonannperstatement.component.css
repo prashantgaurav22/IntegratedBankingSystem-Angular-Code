@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color:transparent;
+    height: 100vh;
+  }
+#monthly-statement .container #monthly-statement-row #monthly-statement-column #monthly-statement-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+  }
+  #monthly-statement .container #monthly-statement-row #monthly-statement-column #monthly-statement-box #monthly-statement-form {
+    padding: 20px;
+  }
+  #monthly-statement .container #monthly-statement-row #monthly-statement-column #monthly-statement-box #monthly-statement-form #register-link {
+    margin-top: -85px;
+  }

@@ -1,0 +1,39 @@
+<body>
+    <div id="login">
+        <h2 class="text-center text-white pt-1"><strong>Integrated Banking System </strong> </h2>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form [formGroup]="loginForm" (ngSubmit)="login()">
+                            <h3 class="text-center text-info">Login</h3>
+                            <div class="form-group">
+                                <label for="username" class="text-info">Username:</label><br>
+                                <input type="text" formControlName="userName" class="form-control" />
+                                <div class="alert alert-danger"
+                                    *ngIf="f.userName.invalid && (f.userName.touched || f.userName.dirty)">
+                                    <strong>User name can not be left blank</strong>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="text-info">Password:</label><br>
+                                <input type="password" formControlName="password" class="form-control" />
+                                <div class="alert alert-danger"
+                                    *ngIf="f.password.invalid && (f.password.touched || f.password.dirty)">
+                                    <strong>Password can not be left blank</strong>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <button class="btn btn-primary" [disabled]="loginForm.invalid">Sign In</button>
+                            </div>
+                        
+                        <div id="register-link" class="text-right">
+                            <a href="/reg"  class="text-info">Signup</a>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

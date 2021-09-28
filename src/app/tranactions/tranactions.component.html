@@ -1,0 +1,64 @@
+
+<h3 style="text-align: center;" class="text-black pt-5">{{isEditing?"Edit ":"New "}} Transaction</h3>
+
+<div class="col-sm-14">
+    <div id="transfer-row" class="row justify-content-center align-items-center">
+        <div id="transfer-column" class="col-md-6">
+            <div id="transfer-box" class="col-md-12">
+
+                <form [formGroup]="itemForm"  (ngSubmit)="save()" class="form" >
+                   
+                    
+                    <div class="form-group">
+                        <label>account Number</label>
+                        <input type="text" class="form-control" formControlName="account_Number" />
+                        <div *ngIf="f.account_Number.invalid && (f.account_Number.touched || f.account_Number.dirty)"
+                            class="alert alert-danger">
+                            <span *ngIf="f.account_Number.errors.required">account_Number is manditory</span>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>cardNumber</label>
+                        <input type="number" class="form-control" formControlName="cardNumber" />
+                        <div *ngIf="f.cardNumber.invalid && (f.cardNumber.touched || f.cardNumber.dirty)"
+                            class="alert alert-danger">
+                            <span *ngIf="f.cardNumber.errors.required">cardNumber is manditory</span>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>transactionDate</label>
+                        <input type="date" class="form-control" formControlName="transactionDate" />
+                        <div *ngIf="f.transactionDate.invalid && (f.transactionDate.touched || f.transactionDate.dirty)"
+                            class="alert alert-danger">
+                            <span *ngIf="f.transactionDate.errors.required">transactionDate is manditory</span>
+
+                        </div>
+                    </div>
+
+
+                   
+                 
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" class="form-control" formControlName="amount" />
+                        <div *ngIf="f.amount.invalid && (f.amount.touched || f.amount.dirty)"
+                            class="alert alert-danger">
+                            <span *ngIf="f.amount.errors.required">amount is manditory</span>
+
+                        </div>
+                    </div>
+
+                   
+
+                    <div class="text-right">
+                        <button class="btn btn-primary col-md-12" [disabled]="!itemForm.valid">
+                            Transfer
+                        </button>
+                    </div>                   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

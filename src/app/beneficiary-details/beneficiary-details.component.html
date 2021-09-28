@@ -1,0 +1,56 @@
+<h3  class="mr-8"> Beneficiary Details</h3>
+
+<div class="alert alert-info" *ngIf="!(errMsg || beneficiarys)">
+    <strong>Loading Data! Please wait...!</strong>
+</div>
+
+<div *ngIf="errMsg">
+    <strong>{{errMsg}}</strong>
+</div>
+
+<table style="color: aliceblue;" *ngIf="beneficiarys" class="table table-condensed table-hover mb-4" style="cursor: pointer ">
+    <thead  style="color: aliceblue;">
+        <tr>
+            <th>account_Number</th>
+            <th>fname</th>
+
+            <th>lname</th>
+            <th>phoneNumber</th>
+            <th>ifsc</th>
+            <th>transfer_Type</th>
+
+            <th>Action</th>
+
+
+
+        </tr>
+
+
+
+
+    </thead>
+    <tbody  style="color: aliceblue;">
+        <tr *ngFor="let beneficiary of beneficiarys">
+            <td>{{beneficiary.account_Number}}</td>
+            <td>{{beneficiary.fname}}</td>
+
+            <td>{{beneficiary.lname}}</td>
+            <td>{{beneficiary.phoneNumber}}</td>
+            <td>{{beneficiary.ifsc}}</td>
+            <td>{{beneficiary.transfer_Type}}</td>
+
+
+            <td>
+                <a href="/trans" class="btn btn-sm btn-primary mr-2">
+                    Transfer
+                </a>
+                <a (click)="delete(beneficiary.account_Number)" class="btn btn-sm btn-danger mr-2">
+                    DELETE
+                </a>
+
+
+            </td>
+        </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,68 @@
+<h3 class="text-black pt-5">{{isEditing?"Edit ":"Account Details "}} </h3>
+
+
+<div class="col-sm-12">
+    <div id="transfer-row" class="row justify-content-center align-items-center">
+        <div id="transfer-column" class="col-md-6">
+            <div id="transfer-box" class="col-md-12">
+
+                <form [formGroup]="itemForm" class="form">
+                    <div class="form-group">
+
+
+                        <br>
+                        <li class="dropdown">
+                            <button class="dropbtn">Account---></button>
+                            <div class="dropdown-content">
+                                <a href="/checkbal">Check Balance</a>
+                                <a href="transfun">TransferFunds</a>
+                                <a href="pay">Pay Utility Bills</a>
+                                <a href="reqministat">Request Mini Statement</a>
+                                <a href="reqmon">Request Periodic/Monthly</a>
+                               
+                               
+                                
+                            </div>
+                        </li>
+                    </div>
+                    <div class="form-group">
+
+                        <label>Customer Id</label>
+                        <input type="number" class="form-control text-center" formControlName="customerId"
+                            [disabled]="isEditing" />
+                        <div *ngIf="f.customerId.invalid && (f.customerId.touched || f.customerId.dirty)"
+                            class="alert alert-danger">
+
+                            <span>customerId is manditory</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label>Password</label>
+                        <input type="password" class="form-control text-center" formControlName="password"
+                            [disabled]="isEditing" />
+                        <div *ngIf="f.password.invalid && (f.password.touched || f.password.dirty)"
+                            class="alert alert-danger">
+
+                            <span>password is manditory</span>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="text-right">
+                        <button class="btn btn-primary col-md-12" [disabled]="!itemForm.valid">
+                            Submit
+                        </button>
+                    </div>
+
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

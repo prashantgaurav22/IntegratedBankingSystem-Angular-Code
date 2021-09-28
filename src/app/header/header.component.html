@@ -1,0 +1,117 @@
+<header class="mb-3" >
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+
+    <nav class="navbar navbar-expand-sm  navbar-dark " style="background-color: #000000;">
+        <img src="https://www.logolynx.com/images/logolynx/6c/6c8eddb0b3895c1441164c4649754189.jpeg" alt="Logo"
+            style="width:140px;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="navbar-brand" routerLink="/home">{{brand}}</a>
+        <div >
+
+            <ul class="navbar-nav " *ngIf="isLoggedIn">
+
+            <li style="font-size: 20px;" class="nav-item active" *ngFor="let link of links">
+                <a class="nav-link" [routerLink]="link.path">
+                 
+                    <fa-icon [icon]="link.icon"> </fa-icon>
+                    {{link.linkText}} 
+                </a>
+            </li>
+
+
+         
+
+
+            <li class="dropdown">
+                <button class="dropbtn"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
+                <div class="dropdown-content">
+
+                    <!--<a href="addAcc">Accounts</a>-->
+                    <a href="trans">Transactions</a>
+                    <a href="benefDetails">Beneficiary Details</a>
+                    <a href="checkbal">Check Balance</a>
+                    <a href="transfun">Transfer Funds</a>
+                    <a href="pay">Pay</a>
+                    <a href="reqministat">Request Mini Statement</a>
+                    <a href="reqmon">Request Periodic</a>
+
+
+
+
+                </div>
+            </li>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+          
+            <div >
+                <a href="/newuser">
+                    <button class="dropbtn"><i class="fa fa-address-book" aria-hidden="true"></i>  Register Here!!</button>
+
+                </a>
+            </div>
+
+
+        
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+            &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+           
+
+
+            <div style="text-align: right;" class="btn-nav pull-right">
+                <a href="/bank">
+                    <p ><i class="fa fa-user" aria-hidden="true"></i>  Admin! </p>
+
+
+
+                </a>
+
+               
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+            <div  >
+                <a href="/aboutus">
+                    <p ><i class="fa fa-address-book" aria-hidden="true"></i>  About US </p>
+
+
+                </a>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+          
+            <div  >
+                <a  (click)="logout()">
+                    <p ><i style='font-size:18px' class='fas'>&#xf2f5;</i>  Signout!</p>           
+                                 </a>
+                                 <a href="/userdetails">  <i class="fa fa-user" aria-hidden="true"></i>     <strong><i> Welcome...{{username|uppercase}}</i></strong></a>
+            </div>
+
+            
+
+          
+
+           
+
+        </ul>
+        </div>
+
+    </nav>
+
+
+
+
+
+
+
+
+
+</header>

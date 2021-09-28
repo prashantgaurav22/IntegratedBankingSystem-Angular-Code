@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color:transparent;
+    height: 100vh;
+  }
+#utility-bills .container #utility-bills-row #utility-bills-column #utility-bills-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+  }
+  #utility-bills .container #utility-bills-row #utility-bills-column #utility-bills-box #utility-bills-form {
+    padding: 20px;
+  }
+  #utility-bills.container #utility-bills-row #utility-bills-column #utility-bills-box #utility-bills-form #register-link {
+    margin-top: -85px;
+  }

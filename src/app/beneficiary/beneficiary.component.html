@@ -1,0 +1,83 @@
+<h3 class="text-center pt-5" style="color: rgb(43, 42, 40);"> <strong><i>Beneficiary Details</i> </strong> </h3>
+
+<div class="col-sm-12">
+    <div id="transfer-row" class="row justify-content-center align-items-center">
+        <div id="transfer-column" class="col-md-6">
+            <div id="transfer-box" class="col-md-12">
+
+                <form [formGroup]="itemForm" (ngSubmit)="save()" class="form">
+                    <div class="form-group">
+
+                        <label>Account Number </label>
+                        <input type="number" class="form-control text-center" formControlName="account_Number"
+                             />
+                        <div *ngIf="f.account_Number.invalid && (f.account_Number.touched || f.account_Number.dirty)"
+                            class="alert alert-danger">
+
+                            <span>Account Number is manditory</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label>First Name</label>
+                        <input type="text" class="form-control text-center" formControlName="fname"
+                            />
+                        <div *ngIf="f.fname.invalid && (f.fname.touched || f.fname.dirty)"
+                            class="alert alert-danger">
+
+                            <span>First Name is manditory</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label>Last Name</label>
+                        <input type="text" class="form-control text-center" formControlName="lname"
+                            />
+                        <div *ngIf="f.lname.invalid && (f.lname.touched || f.lname.dirty)"
+                            class="alert alert-danger">
+
+                            <span>Last Name is manditory</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label>Phone Number</label>
+                        <input type="text" class="form-control text-center" formControlName="phoneNumber"
+                            />
+                        <div *ngIf="f.phoneNumber.invalid && (f.phoneNumber.touched || f.phoneNumber.dirty)" class="alert alert-danger">
+
+                            <span>Phone Number is manditory</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label>IFSC</label>
+                        <input type="text" class="form-control text-center" formControlName="ifsc"
+                            />
+                        <div *ngIf="f.ifsc.invalid && (f.ifsc.touched || f.ifsc.dirty)"
+                            class="alert alert-danger">
+
+                            <span>IFSC is manditory</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label>Transfer Type</label>
+                        <input type="text" class="form-control text-center" formControlName="transfer_Type"
+                            />
+                        <div *ngIf="f.transfer_Type.invalid && (f.transfer_Type.touched || f.transfer_Type.dirty)"
+                            class="alert alert-danger">
+
+                            <span>Transfer Type is manditory</span>
+                        </div>
+                    </div>
+
+
+
+                    <button class="btn btn-primary"> Add</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

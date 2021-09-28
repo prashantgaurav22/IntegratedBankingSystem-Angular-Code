@@ -1,0 +1,46 @@
+
+<h1>hello your transaction is success </h1>
+<div class="alert alert-info" *ngIf="!(errMsg || transactions)">
+    <strong>Loading Data! Please wait...!</strong>
+</div>
+ 
+<div class="alert alert-danger" *ngIf="errMsg">
+    <strong>{{errMsg}}</strong>
+</div>
+<table *ngIf="transactions" class="table table-condensed table-hover mb-2 col-md-6" 
+style="cursor: pointer " >
+    <thead>
+        <tr>
+            <th>Transaction Id</th>  
+            <th>account Number</th>  
+            <th>Amount</th>
+
+
+
+        </tr>
+
+
+    
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let transaction of transactions">
+            <td>{{transaction.transactionId}}</td>
+            <td>{{transaction.account_Number}}</td>
+
+            <td>{{transaction.amount}}</td>
+            
+           
+
+       <td>
+       
+        <a (click)="delete(transaction.transactionId)" class="btn btn-sm btn-danger mr-2">
+            DELETE
+        </a>
+
+    
+       </td>
+        </tr>
+
+    </tbody>
+</table>

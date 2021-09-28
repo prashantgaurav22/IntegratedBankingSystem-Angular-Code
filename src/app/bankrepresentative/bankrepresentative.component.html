@@ -1,0 +1,65 @@
+<h3 class="mr-8"> Customer Details</h3>
+ 
+<div class="alert alert-info" *ngIf="!(errMsg || customers)">
+    <strong>Loading Data! Please wait...!</strong>
+</div>
+ 
+<div  *ngIf="errMsg">
+    <strong>{{errMsg}}</strong>
+</div>
+ 
+<table *ngIf="customers" class="table table-condensed table-hover mb-4" 
+style="cursor: pointer " >
+    <thead>
+        <tr>
+            <th>customerId</th>  
+            <th>account</th>  
+
+            <th>aadharNumber</th>  
+            <th>fName</th>
+            <th>lName</th>
+            <th>email</th>
+            <th>password</th>
+            <th>dataOfBirth</th>
+            <th>phoneNumber</th>
+            <th>address</th>
+            <th>panCard</th>
+            <th>gender</th>
+            <th>accountType</th>
+            <th>Action</th>
+
+
+
+        </tr>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.customerId}}</td>
+            <td>{{customer.account}}</td>
+
+            <td>{{customer.aadharNumber}}</td>
+            <td>{{customer.fName}}</td>
+            <td>{{customer.lName}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.password}}</td>
+            <td>{{customer.dataOfBirth}}</td>
+            <td>{{customer.phoneNumber}}</td>
+
+            <td>{{customer.address}}</td>
+            <td>{{customer.panCard}}</td>
+            <td>{{customer.gender}}</td>
+            <td>{{customer.accountType}}</td>
+
+       <td>
+        <a (click)="edit(customer.customerId)" class="btn btn-sm btn-primary mr-2">
+            Edit
+        </a>
+       
+
+    
+       </td>
+        </tr>
+
+    </tbody>
+</table>
